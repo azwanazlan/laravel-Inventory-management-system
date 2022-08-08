@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\demo\demoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +24,13 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/about', function() {
-    echo "this is a about page";
+Route::controller(demoController::class)->group(function () {
+    Route::get('/about','index')->name('about.page')->middleware('check');
+    Route::get('/contact','contactMethod')->name('contact.page');
 });
 
-Route::get('/contact', function() {
-    return view('contact');
-});
+
+
+// Route::get('/contact', function() {
+//     return view('contact');
+// });
