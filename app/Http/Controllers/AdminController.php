@@ -17,4 +17,9 @@ class AdminController extends Controller
 
         return redirect('/');
     }
+
+    public function stock() {
+        return view('admin.stock');
+    }
+
 }
