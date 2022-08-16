@@ -16,10 +16,8 @@ return new class extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->id('productid');
             $table->string('productlabel');
-            $table->integer('brandid')->unsigned();
-            $table->foreign('brandid')->references('brandid')->on('brand');
-            $table->integer('categoryid')->unsigned();
-            $table->integer('categoryid')->references('caregoryid')->on('category');
+            $table->foreignId('brandid')->references('brandid')->on('brand');
+            $table->foreignId('categoryid')->references('categoryid')->on('category');
             $table->integer('price');
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('productid');
+        Schema::dropIfExists('product');
     }
 };
