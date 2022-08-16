@@ -26,7 +26,7 @@ Route::get('/dashboard', function () {
 
 Route::controller(AdminController::class)->group(function () {
     Route::get('/admin/logout', 'destroy')->name('admin.logout');
-    Route::get('/admin/stock', 'stock')->name('admin.stock');
+    Route::get('/admin/stock', 'stock')->name('admin.stock')->middleware(['auth','verified']);
 });
 
 
