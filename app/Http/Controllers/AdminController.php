@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -19,7 +19,10 @@ class AdminController extends Controller
     }
 
     public function stock() {
-        return view('admin.stock');
+        $data = Product::all();
+        return view('admin.stock',['products'=>$data]);
     }
+
+
 
 }

@@ -85,14 +85,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($products as $product)
                                     <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
+                                      <td>{{$product->id}}</td>
+                                      <td>{{$product->productlabel}}</td>
+                                      <td>{{$product->brand->brandname}}</td>
+                                      <td>{{$product->category_id}}</td>
+                                      <td>{{$product->price}}</td>
                                     </tr>
+                                     @endforeach
                                     <tr>
                                         <td>Garrett Winters</td>
                                         <td>Accountant</td>
