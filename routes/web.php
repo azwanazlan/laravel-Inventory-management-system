@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,10 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/admin/test', 'test');
     Route::get('/admin/test', 'getdata');
 });
+
+Route::get('/admin/stock/add',[ProductController::class, 'add'])->name('product.add');
+
+
 
 
 require __DIR__.'/auth.php';

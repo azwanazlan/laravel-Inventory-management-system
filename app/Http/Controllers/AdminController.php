@@ -30,11 +30,6 @@ class AdminController extends Controller
 
     }
 
-    public function getdata() {
-        $product = Product::with('category')->get();
-
-        return view('admin.test')->with('products',$product);
-    }
 }
 
 

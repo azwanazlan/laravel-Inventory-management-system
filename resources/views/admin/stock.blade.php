@@ -2,7 +2,7 @@
 @section('admin')
 <main>
     <div class="container-fluid px-4">
-        <h4 class="mt-4">Stock</h4>
+        <h4 class="mt-4 mb-4">Stock</h4>
 
         <!--- First Card --->
         <div class="card">
@@ -49,6 +49,7 @@
         <div class="card mt-4">
             <div class="card-header">Stocks List</div>
                 <div class="card-body">
+                    <button class="btn btn-primary mb-3" href=""{{route('product.add')}}"">+ Add</button>
                     <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
                         <div class="dataTable-top">
                             <div class="dataTable-dropdown">
