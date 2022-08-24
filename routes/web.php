@@ -32,7 +32,11 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/admin/test', 'getdata');
 });
 
-Route::get('/admin/stock/add',[ProductController::class, 'add'])->name('product.add');
+Route::controller(ProductController::class)->group(function () {
+    Route::post('/admin/stock/add', 'addNewProduct')->name('product.add');
+    Route::get('/admin/stock/add', 'addProductForm')->name('product.form');
+});
+
 
 
 

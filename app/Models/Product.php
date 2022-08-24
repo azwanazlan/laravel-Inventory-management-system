@@ -13,7 +13,10 @@ class Product extends Model
 {
     use HasFactory;
 
-    public $fillable = ['productLabel','brand_id', 'category_id'];
+    public $fillable = ['productLabel',
+                        'brand_id',
+                        'category_id'
+                        ];
 
     /**
      * Get the user that owns the Product

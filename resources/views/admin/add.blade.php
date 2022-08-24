@@ -4,44 +4,64 @@
 <main>
     <div class="container-fluid px-4">
         <h4 class="mt-4 mb-4">Stock</h4>
+        @if (Session::get('success'))
+        <div class="alert alert-success">
+            {{ Session::get('success')}}
+        </div>
+
+        @endif
+
+        @if (Session::has('fail'))
+        <div class="alert alert-danger">
+            {{ Session::get('fail')}}
+        </div>
+
+        @endif
+
 
         <!--- Add Item Card --->
         <div class="card">
             <div class="card-header">Add Item</div>
                 <div class="card-body">
-                    <form action="#" autocomplete="off" id="searchForm" name="frmSearchStocks" method="post">
-                    <div class="row">
+                    <form action="{{route('product.form')}}" autocomplete="off" id="searchForm" name="frmSearchStocks" method="post">
+                    @csrf
+                        <div class="row">
                         <div class="col px-3">
-                            <label for="searchStocksItemName">Products ID</label>
-                            <input class="form-control" type="text" name="searchItem_Name" id="searchItemName">
-                            <label class="mt-3" for="searchStocksItemName">Products Label</label>
-                            <input class="form-control" type="text" name="searchItem_Name" id="searchItemName">
-                            <button class="btn btn-primary btn-sm mt-4">Search</button>
-                            <button class="btn btn-secondary btn-sm mt-4">Reset</button>
+                            <label for="">Serial Number</label>
+                            <input class="form-control" type="text" name="serialNumber" id="productSerialNumber">
+                            <span style="color:red">@error('serialNumber'){{$message}} @enderror</span>
+                            <label class="mt-3" for="">Products Label</label>
+                            <input class="form-control" type="text" name="productLabel" id="productLabel">
+                            <span style="color:red">@error('productLabel'){{$message}} @enderror</span>
+
+
                         </div>
                         <div class="col px-3">
-                                <label for="searchStocksItemCategory">Category</label>
-                                <select class="form-control" name="searchItem_Category" id="searchItemCategory">
+                                <label for="">Category</label>
+                                <select class="form-control" name="category_id" id="category_id">
                                     <option value="0">All</option>
                                     <option value="1">RAM</option>
                                     <option value="2">HDD</option>
                                 </select>
+                                <span style="color:red">@error('category_id'){{$message}} @enderror</span>
+
+                                <label class="mt-3" for="">Price</label>
+                                <input class="form-control" type="number" name="price" id="productPrice">
+                                <span style="color:red">@error('price'){{$message}} @enderror</span>
                         </div>
+
                         <div class="col px-3">
-                            <label for="searchStocksBrand">Brand</label>
-                            <input class="form-control" type="text" name="searchItem_Brand" id="searchItemBrand">
-                        </div>
-                        <div class="col px-3">
-                            <label for="searchStocksItemSupplier">Supplier</label>
-                            <select class="form-control" name="searchItem_Supplier" id="searchItemSupplier">
+                            <label for="">Brand</label>
+                            <select class="form-control" name="brand_id" id="Brand">
                                 <option value="0">All</option>
                                 <option value="1">ITTech</option>
                                 <option value="2">Czone</option>
                             </select>
+                            <span style="color:red">@error('brand_id'){{$message}} @enderror</span>
                         </div>
 
                     </div>
-
+                    <button type="submit" class="btn btn-primary btn-sm mt-4">+ Add</button>
                     </form>
                 </div>
             </div>
