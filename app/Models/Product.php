@@ -14,6 +14,7 @@ class Product extends Model
     use HasFactory;
 
     public $fillable = ['productLabel',
+                        'modelNumber',
                         'brand_id',
                         'category_id'
                         ];

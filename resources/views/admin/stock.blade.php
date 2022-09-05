@@ -89,7 +89,7 @@
                                 <tbody>
                                     @foreach($products as $product)
                                     <tr>
-                                      <td>{{$product->serialNumber}}</td>
+                                      <td>{{$product->modelNumber}}</td>
                                       <td>{{$product->productlabel}}</td>
                                       <td>{{$product->brand->brandname}}</td>
                                       <td>{{$product->category->categoryname}}</td>

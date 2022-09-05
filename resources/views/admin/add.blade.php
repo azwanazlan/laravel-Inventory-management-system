@@ -27,9 +27,11 @@
                     @csrf
                         <div class="row">
                         <div class="col px-3">
-                            <label for="">Serial Number</label>
-                            <input class="form-control" type="text" name="serialNumber" id="productSerialNumber">
-                            <span style="color:red">@error('serialNumber'){{$message}} @enderror</span>
+
+                            <label for="">Model Number</label>
+                            <input class="form-control" type="text" name="modelNumber" id="modelNumber">
+                            <span style="color:red">@error('modelNumber'){{$message}} @enderror</span>
+
                             <label class="mt-3" for="">Products Label</label>
                             <input class="form-control" type="text" name="productLabel" id="productLabel">
                             <span style="color:red">@error('productLabel'){{$message}} @enderror</span>
@@ -37,11 +39,13 @@
 
                         </div>
                         <div class="col px-3">
+
                                 <label for="">Category</label>
                                 <select class="form-control" name="category_id" id="category_id">
-                                    <option value="0">All</option>
-                                    <option value="1">RAM</option>
-                                    <option value="2">HDD</option>
+                                    <option value="0">Select Category</option>
+                                    @foreach ($dataCategory as $row )
+                                    <option value="{{$row->id}}">{{$row->categoryname}}</option>
+                                    @endforeach
                                 </select>
                                 <span style="color:red">@error('category_id'){{$message}} @enderror</span>
 
@@ -53,9 +57,10 @@
                         <div class="col px-3">
                             <label for="">Brand</label>
                             <select class="form-control" name="brand_id" id="Brand">
-                                <option value="0">All</option>
-                                <option value="1">ITTech</option>
-                                <option value="2">Czone</option>
+                                <option value="0">Select Brand</option>
+                                @foreach ($dataBrand as $row )
+                                <option value="{{$row->id}}">{{$row->brandname}}</option>
+                                @endforeach
                             </select>
                             <span style="color:red">@error('brand_id'){{$message}} @enderror</span>
                         </div>
