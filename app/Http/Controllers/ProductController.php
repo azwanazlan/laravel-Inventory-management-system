@@ -19,8 +19,8 @@ class ProductController extends Controller
         $this->validate($request,[
             'modelNumber'=>'required|unique:products',
             'productLabel'=>'required|unique:products',
-            'category_id'=>'required',
-            'brand_id'=>'required',
+            'category'=>'required|not_in:0',
+            'brand'=>'required|not_in:0',
             'price'=>'required',
         ]);
 
@@ -28,8 +28,8 @@ class ProductController extends Controller
         $product = new Product;
         $product->modelNumber = $request->modelNumber;
         $product->productlabel = $request->productLabel;
-        $product->brand_id = $request->brand_id;
-        $product->category_id = $request->category_id;
+        $product->brand_id = $request->brand;
+        $product->category_id = $request->category;
         $product->price = $request->price;
         $register = $product->save();
 

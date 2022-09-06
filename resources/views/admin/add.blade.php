@@ -41,13 +41,13 @@
                         <div class="col px-3">
 
                                 <label for="">Category</label>
-                                <select class="form-control" name="category_id" id="category_id">
-                                    <option value="0">Select Category</option>
+                                <select class="form-control" name="category" id="category_id">
+                                    <option value="0">--Select--</option>
                                     @foreach ($dataCategory as $row )
                                     <option value="{{$row->id}}">{{$row->categoryname}}</option>
                                     @endforeach
                                 </select>
-                                <span style="color:red">@error('category_id'){{$message}} @enderror</span>
+                                <span style="color:red">@error('category'){{$message}} @enderror</span>
 
                                 <label class="mt-3" for="">Price</label>
                                 <input class="form-control" type="number" name="price" id="productPrice">
@@ -56,13 +56,13 @@
 
                         <div class="col px-3">
                             <label for="">Brand</label>
-                            <select class="form-control" name="brand_id" id="Brand">
-                                <option value="0">Select Brand</option>
+                            <select class="form-control" name="brand" id="Brand">
+                                <option value="0">--Select--</option>
                                 @foreach ($dataBrand as $row )
                                 <option value="{{$row->id}}">{{$row->brandname}}</option>
                                 @endforeach
                             </select>
-                            <span style="color:red">@error('brand_id'){{$message}} @enderror</span>
+                            <span style="color:red">@error('brand'){{$message}} @enderror</span>
                         </div>
 
                     </div>
