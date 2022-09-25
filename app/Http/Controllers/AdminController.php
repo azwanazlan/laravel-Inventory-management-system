@@ -26,7 +26,8 @@ class AdminController extends Controller
     }
 
     public function test() {
-    return view('admin.test');
+        $product = Product::all();
+    return $product;
 
     }
 

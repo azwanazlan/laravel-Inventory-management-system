@@ -1,3 +1,5 @@
-@foreach ($products as $product )
-    {{$product->brand->brandname}}
+@foreach ($products as $product)
+<td>{{$product}}</td>
+
+
 @endforeach

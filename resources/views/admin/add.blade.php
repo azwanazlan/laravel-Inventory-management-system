@@ -28,7 +28,7 @@
                         <div class="row">
                         <div class="col px-3">
 
-                            <label for="">Model Number</label>
+                            <label for="">Task</label>
                             <input class="form-control" type="text" name="modelNumber" id="modelNumber">
                             <span style="color:red">@error('modelNumber'){{$message}} @enderror</span>
 

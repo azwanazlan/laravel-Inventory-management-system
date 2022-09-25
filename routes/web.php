@@ -29,7 +29,7 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/admin/logout', 'destroy')->name('admin.logout');
     Route::get('/admin/stock', 'stock')->name('admin.stock')->middleware(['auth','verified']);
     Route::get('/admin/test', 'test');
-    Route::get('/admin/test', 'getdata');
+
 });
 
 Route::controller(ProductController::class)->group(function () {

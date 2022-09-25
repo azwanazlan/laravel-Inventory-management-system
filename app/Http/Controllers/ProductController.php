@@ -31,7 +31,7 @@ class ProductController extends Controller
         $product->brand_id = $request->brand;
         $product->category_id = $request->category;
         $product->price = $request->price;
-        $register = $product->save();
+        $register = $product->update();
 
         if($register){
             return back()->with('success', 'Product has been successfully added');
